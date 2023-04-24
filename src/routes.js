@@ -8,7 +8,9 @@
 //     "readPage": number,
 //     "reading": boolean
 // }
-import { createBook, getAllBooks, getSpecifiedBook } from './handler.js';
+import {
+  createBook, deleteBook, getAllBooks, getSpecifiedBook, updateSpecifiedBook,
+} from './handler.js';
 
 const apiRoutes = [
   {
@@ -25,6 +27,16 @@ const apiRoutes = [
     method: 'get',
     path: '/books/{bookId}',
     handler: getSpecifiedBook,
+  },
+  {
+    method: 'put',
+    path: '/books/{bookId}',
+    handler: updateSpecifiedBook,
+  },
+  {
+    method: 'delete',
+    path: '/books/{bookId}',
+    handler: deleteBook,
   },
 ];
 
