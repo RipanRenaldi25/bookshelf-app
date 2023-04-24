@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "NODE_ENV=production node ./index.js",
     "lint": "npx eslint ./src",
     "start-dev": "nodemon ./index.js"
   },
