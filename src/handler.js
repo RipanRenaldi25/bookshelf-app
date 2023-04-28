@@ -10,7 +10,7 @@ export const createBook = (request, h) => {
   if (!name) {
     return h.response({
       status: 'fail',
-      message: 'Gagal Menambahkan Buku. Mohon isi nama buku',
+      message: 'Gagal menambahkan buku. Mohon isi nama buku',
     }).code(400);
   }
   if (readPage > pageCount) {

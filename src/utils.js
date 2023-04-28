@@ -24,5 +24,5 @@ export const filterBooks = (books, query) => {
   bookCloned = filterBooksByName(bookCloned, query);
   bookCloned = filterBooksByReading(bookCloned, query);
   bookCloned = filterBooksByFinished(bookCloned, query);
-  return bookCloned;
+  return bookCloned.map((book) => ({ id: book.id, name: book.name, publisher: book.publisher }));
 };
