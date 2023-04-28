@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import books from './books.js';
+import { filterBooks } from './utils.js';
 
 export const createBook = (request, h) => {
   // name, year, author summary, publisher, readPage, reading, insertedAt, updatedAt
@@ -48,10 +49,11 @@ export const createBook = (request, h) => {
 };
 
 export const getAllBooks = (request, h) => {
+  const { query } = request;
   const response = h.response({
     status: 'success',
     data: {
-      books,
+      books: filterBooks(books, query),
     },
   });
   response.code(200);
